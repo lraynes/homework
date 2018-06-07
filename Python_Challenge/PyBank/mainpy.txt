@@ -1,0 +1,5 @@
+Total months: 86
+Total revenue: $55945323
+Average change over time: $4392.2441860465115
+Greatest increase: $2214907, occurred 09-14
+Greatest decrease: $-2293129, occurred 08-14
