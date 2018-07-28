@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mars</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+
+<style>
+    
+    body{
+        background-color: lightblue
+    }
+
+    #imgsidebar, #featured{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        box-shadow: 2px 2px 2px #5a5a5a;
+    }
+
+    #innerrow{
+        text-align: center;
+    }
+
+    .col-md-12, .col-md-6, .col-md-8, .col-md-4{
+        padding: 2%;
+    }
+
+</style>
+
+<body>
+    <div class="jumbotron text-center">
+        <h1>Mars Data</h1>
+        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Latest Mars News</h2>
+            
+            {{ marsDB.news_title }}
+            <br>
+            {{ marsDB.news_paragraph }}
+
+            
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Featured Mars Image</h2>
+            <img src= "{{marsDB.featured_image}}" id="featured"/>
+            
+        </div>
+        <div class="col-md-4">
+            <h3>Current Weather on Mars</h3>
+            <br>
+            {{ marsDB.weather }}
+
+            <br>
+            <br>
+
+            <h3>Mars Facts</h3>
+            <table border="1" class="dataframe">
+                <tr>
+                    <th>Description</th>
+                    <th>Value</th>
+                </tr>
+                {% for entry in marsDB.mars_facts %}
+                    <tr>
+                        <td>{{ entry.Description }}</td>
+                        <td>{{ entry.Value }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Mars Hemispheres</h2>
+            <hr>
+            <div class="row" id="innerrow">
+                <div class="col-md-6">
+                    <img src="{{ marsDB.hemispheres.0.img_url }}" id="imgsidebar">
+                    <br>
+                    <h3>{{ marsDB.hemispheres.0.title }}</h3>
+                </div>
+                <div class="col-md-6">
+                    <img src="{{ marsDB.hemispheres.1.img_url }}" id="imgsidebar">
+                    <br>
+                    <h3>{{ marsDB.hemispheres.1.title }}</h3>
+                </div>
+            </div>
+            <br>
+            <div class="row" id="innerrow">
+                <div class="col-md-6">
+                    <img src="{{ marsDB.hemispheres.2.img_url }}" id="imgsidebar">
+                    <br>
+                    <h3>{{ marsDB.hemispheres.2.title }}</h3>
+                </div>
+                <div class="col-md-6">
+                    <img src="{{ marsDB.hemispheres.3.img_url }}" id="imgsidebar">
+                    <br>
+                    <h3>{{ marsDB.hemispheres.3.title }}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
