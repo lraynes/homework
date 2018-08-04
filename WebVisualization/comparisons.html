@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Comparisons</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="./index.html">Latitude</a>
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+								<li><a href="./temp.html">Temperature</a></li>
+								<li><a href="./humid.html">Humidity</a></li>
+								<li><a href="./cloud.html">Cloudiness</a></li>
+								<li><a href="./wind.html">Wind</a></li>
+						</ul>
+					</li>
+					<li><a href="./comparisons.html">Comparison</a></li>
+					<li><a href="./data.html">Data</a></li>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container-fluid -->
+	</nav>
+
+	<div class="row">
+		<div class="col-md-12">
+			<h1>Comparison: Latitude vs X</h1>
+			<hr>
+			Click on each graph for a more in-depth analysis.
+			<br>
+			<br>
+			<div class="row" id="innerrow">
+				<div class="col-md-6">
+					<h3>vs Max Temperature</h3>
+					<a href="./temp.html">
+						<img src=".\Images\temperature.png" id="imgsidebar"/>
+					</a>
+				</div>
+				<div class="col-md-6">
+					<h3>vs Humidity</h3>
+					<a href="./humid.html">
+						<img src=".\Images\humidity.png" id="imgsidebar"/>
+					</a>
+				</div>
+			</div>
+			<div class="row" id="innerrow">
+				<div class="col-md-6">
+					<h3>vs Clouds</h3>
+					<a href="./cloud.html">
+						<img src=".\Images\clouds.png" id="imgsidebar"/>
+					</a>
+				</div>
+				<div class="col-md-6">
+					<h3>vs Wind Speed</h3>
+					<a href="./wind.html">
+						<img src=".\Images\wind.png" id="imgsidebar"/>
+					</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</body>
+</html>

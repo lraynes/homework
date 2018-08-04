@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Home Page</title>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="style.css">
+</head>
+<body>
+		
+		
+	<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="./index.html">Latitude</a>
+				</div>
+		
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="./temp.html">Temperature</a></li>
+								<li><a href="./humid.html">Humidity</a></li>
+								<li><a href="./cloud.html">Cloudiness</a></li>
+								<li><a href="./wind.html">Wind</a></li>
+							</ul>
+						</li>
+						<li><a href="./comparisons.html">Comparison</a></li>
+						<li><a href="./data.html">Data</a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+
+		<div class="row">
+			<div class="col-md-7">
+				<h1>Summary: Latitude vs X</h1>
+				<hr>
+				<p>
+					<img src=".\Images\temperature.png" id="homegraph" style="float: left"/>
+					This project was focused on working with API calls. My goal was to get various information about a city’s 
+					weather (temperature, humidity, cloud coverage, and wind speed) and see how they relate to its latitude. 
+					Constraints included making sure each city was unique and that it existed in all APIs I planned to use.
+					<br><br>
+					To generate the data, I first created a random set of 500 unique latitudes and longitudes. I then used the 
+					python library citipy to get the coordinate’s closest corresponding city. It was at this point I realized 
+					there might be a problem: what happens if the random coordinate point was in the ocean, and therefore the 
+					nearest city was hundreds of miles away? To account for this, I fed the city name into Google’s API to retrieve 
+					its true coordinates. Once I had generated 500 unique cities and coordinates, I used the library openweathermappy 
+					to retrieve weather data from Openweathermap.org. Matplotlib was used to display the results.
+				</p>
+			</div>
+
+			<div class="col-md-1"></div>
+
+			<div class="col-md-4">
+				<h2>Visualizations</h2>
+				<hr>
+				<div class="row" id="innerrow">
+					<div class="col-md-6">
+						<a href="./temp.html">
+							<img src=".\Images\temperature.png" id="imgsidebar"/>
+						</a>
+					</div>
+					<div class="col-md-6">
+						<a href="./humid.html">
+							<img src=".\Images\humidity.png" id="imgsidebar"/>
+						</a>
+					</div>
+				</div>
+				<div class="row" id="innerrow">
+					<div class="col-md-6">
+						<a href="./cloud.html">
+							<img src=".\Images\clouds.png" id="imgsidebar"/>
+						</a>
+					</div>
+					<div class="col-md-6">
+						<a href="./wind.html">
+							<img src=".\Images\wind.png" id="imgsidebar"/>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+</body>
+</html>

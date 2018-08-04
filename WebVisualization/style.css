@@ -1,0 +1,106 @@
+body{
+    background-color: #906FA2;
+}
+
+hr{
+    border-color: #5a5a5a
+}
+
+h1, h2{
+    color: #0A0010;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.navbar-default{
+    background-color: #E7E6E7;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+}
+
+.row{
+    margin-top: 2%;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-bottom: 2%;   
+}
+
+.col-md-12{
+    background-color: #E7E6E7;
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #5a5a5a;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.col-md-7{
+    background-color: #E7E6E7;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #5a5a5a;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.col-md-4{
+    background-color: #E7E6E7;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #5a5a5a;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.col-md-1{
+    margin: 0px;
+    padding: 0px; 
+}
+
+.col-md-6{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#homegraph{
+    display: inline-block;
+    width: 40%;
+    margin: 2%;
+}
+
+#imgsidebar{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    box-shadow: 2px 2px 2px #5a5a5a;
+}
+
+#innerrow{
+    margin: 0px;
+    padding: 5px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#innerrow img{
+    margin: 5px;
+}
+
+#indivpics{
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#comparison{
+    width: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
