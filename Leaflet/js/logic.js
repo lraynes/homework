@@ -30,8 +30,8 @@ let baseMaps = {
 };
 
 let myMap = L.map("map-id", {
-  center: [33.82, -117.65],
-  zoom: 4,
+  center: [33.11, -41.84],
+  zoom: 3,
   layers: [satellitemap]
 });
 
@@ -43,17 +43,17 @@ var url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.ge
 
 function chooseColor(magnitude) {
   if (magnitude < 1){
-    return "green"
+    return "#00FF00"
   } else if (magnitude >= 1 && magnitude < 2){
-    return "yellow"
+    return "#65FF00"
   } else if (magnitude >= 2 && magnitude < 3){
-    return "blue"
+    return "#CCFF00"
   } else if (magnitude >= 3 && magnitude < 4){
-    return "purple"
+    return "#FFCC00"
   } else if (magnitude >= 4 && magnitude < 5){
-    return "teal"
+    return "#FF6600"
   } else if (magnitude >= 5){
-    return "red"
+    return "#FF0000"
   } else {
     return "black"
   };
@@ -67,30 +67,33 @@ function chooseSize(magnitude) {
   } else if (magnitude >= 2 && magnitude < 3){
     return 5.9**6.5
   } else if (magnitude >= 3 && magnitude < 4){
-    return 5.9**6.5
-  } else if (magnitude >= 4 && magnitude < 5){
     return 6.2**6.5
+  } else if (magnitude >= 4 && magnitude < 5){
+    return 6.5**6.5
   } else if (magnitude >= 5){
-    return 7**6.5
+    return 6.9**6.5
   } else {
     return 0
   };
 };
 
+let legend = L.control({position: 'bottomright'});
 
-// function chooseSize(magnitude) {
-//   if (magnitude < 2){
-//     return 5**6.5
-//   } else if (magnitude >= 2 && magnitude < 5){
-//     return 5.6**6.5
-//   } else if (magnitude >= 5 && magnitude < 7){
-//     return 6.2**6.5
-//   } else if (magnitude >= 7){
-//     return 6.8**6.5
-//   } else {
-//     return 0
-//   };
-// };
+legend.onAdd = function (map) {
+  let div = L.DomUtil.create('div', 'info legend'),
+    grades = [0, 1, 2, 3, 4, 5],
+    labels = [];
+
+  // loop through our density intervals and generate a label with a colored square for each interval
+  for (let i = 0; i < grades.length; i++) {
+    div.innerHTML +=
+      '<i style="background:' + chooseColor(grades[i] + 1) + '"></i> ' +
+      grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+  }
+  return div;
+};
+
+legend.addTo(myMap);
 
 d3.json(url, function(data){
   console.log(data.features)
