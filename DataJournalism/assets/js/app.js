@@ -34,17 +34,17 @@ d3.csv("assets/data/data.csv", function(err, healthData) {
     data.smokes = +data.smokes;
   });
   
-  xList = [d.poverty, d.income, d.age]
-  yList = [d.healthcare, d.obesity, d.smokes]
 
+
+  
   // Step 2: Create scale functions
   // ======================================================
   let xLinearScale = d3.scaleLinear()
-    .domain(d3.extent(healthData, d => xList[0]))
+    .domain(d3.extent(healthData, d => d.poverty))
     .range([0, width]);
 
   let yLinearScale = d3.scaleLinear()
-    .domain([0, d3.max(healthData, d => yList[0])])
+    .domain([0, d3.max(healthData, d => d.healthcare)])
     .range([height, 0]);
   
     // Step 3: Create axis functions
@@ -68,15 +68,15 @@ d3.csv("assets/data/data.csv", function(err, healthData) {
     .enter()
   
   points.append("circle")
-    .attr("cx", d => xLinearScale(xList[0]))
-    .attr("cy", d => yLinearScale(yList[0]))
+    .attr("cx", d => xLinearScale(d.poverty))
+    .attr("cy", d => yLinearScale(d.healthcare))
     .attr("r", "15") 
     .attr("class", "stateCircle")
     .attr("opacity", .9);
     
   points.append("text")
-    .attr("x", d => xLinearScale(xList[0]))
-    .attr("y", d => yLinearScale(yList[0]) + 15/2)
+    .attr("x", d => xLinearScale(d.poverty))
+    .attr("y", d => yLinearScale(d.healthcare) + 15/2)
     .attr("class", "stateText")
     .text(d => d.abbr)
 
